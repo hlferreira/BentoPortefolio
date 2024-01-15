@@ -1,10 +1,13 @@
 <script>
+  import TechStack from "./tech/techStack.svelte";
+  import { techStore, Level } from "./../stores/technologiesStore.ts";
   import Image from "./image/image.svelte";
   import image from "../../public/images/icons/gear-white.png";
   export let row;
   export let col;
   export let rowSize;
   export let colSize;
+
   $: element = undefined;
   let hovered = false;
 </script>
@@ -24,6 +27,13 @@
   on:focus={() => {}}
 >
   <Image {image} {hovered} />
+
+  {#if $techStore}
+    <!-- content here -->
+    <TechStack name="Proficient" techs={$techStore[Level.Proficient]} />
+    <TechStack name="Competent" techs={$techStore[Level.Comfortable]} />
+    <TechStack name="Have tried" techs={$techStore[Level.HaveUsed]} />
+  {/if}
 </div>
 
 <style>
@@ -34,7 +44,8 @@
     padding: 10pt;
     border-radius: 10pt;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin-right: 5pt;
     margin-bottom: 5pt;

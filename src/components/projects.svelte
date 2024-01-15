@@ -32,13 +32,18 @@
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(12, 1fr);
 
-    overflow: hidden;
     padding: 5pt;
     border-radius: 10pt;
     border: 3pt solid white;
 
     margin-right: 5pt;
     margin-bottom: 5pt;
+    transition: none;
+    transform: none;
+  }
+
+  .container:hover {
+    transition: none;
   }
 
   .container > * {

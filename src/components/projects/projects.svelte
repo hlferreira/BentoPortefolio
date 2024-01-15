@@ -8,7 +8,7 @@
 </script>
 
 <a
-  class="project-container"
+  class="project-container container"
   style="--row:{row}; --col:{col}; --rowSize:{rowSize}; --colSize:{colSize}"
   href={project.link}
 >
@@ -48,8 +48,9 @@
 
     justify-content: space-between;
     min-width: 0;
+    z-index: 1000;
   }
-  .project-container:nth-child(n-1) {
+  .project-container:not(:last-child) {
     margin-right: 5pt;
   }
   .image-wrapper {

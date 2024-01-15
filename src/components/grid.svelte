@@ -55,7 +55,7 @@
 
   <Cv row="4" col="7" rowSize="1" colSize="1" />
 
-  <Phone row="12" col="6" rowSize="1" colSize="5" />
+  <Phone row="12" col="6" rowSize="1" colSize="6" />
 
   <Hobbies
     row="9"
@@ -119,7 +119,7 @@
   />
   <Language
     row="12"
-    col="11"
+    col="12"
     rowSize="1"
     colSize="2"
     image={uk}

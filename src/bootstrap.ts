@@ -1,5 +1,7 @@
 import { calcMousePos } from "./mousePos.ts";
 import { projectsStore, type Project } from "./stores/projectsStore.ts";
+import { Level, techStore } from "./stores/technologiesStore.ts";
+
 import line from "../public/images/projects/lineimage.png";
 import syn from "../public/images/projects/syn.png";
 import viz from "../public/images/projects/viz.png";
@@ -11,6 +13,18 @@ import d3 from "../public/images/technologies/d3.png";
 import opencv from "../public/images/technologies/opencv.png";
 import react from "../public/images/technologies/react.png";
 import arduino from "../public/images/technologies/arduino.png";
+import unity from "../public/images/technologies/unity.png";
+import unreal from "../public/images/technologies/unreal.png";
+import angular from "../public/images/technologies/angular.png";
+import csharp from "../public/images/technologies/csharp.png";
+import express from "../public/images/technologies/express.png";
+import jenkins from "../public/images/technologies/jenkins.png";
+import kotlin from "../public/images/technologies/kotlin.png";
+import node from "../public/images/technologies/node.png";
+import python from "../public/images/technologies/python.png";
+import solidjs from "../public/images/technologies/solidjs.png";
+import svelte from "../public/images/technologies/svelte.png";
+import webpack from "../public/images/technologies/webpack.png";
 
 export function bootstrap() {
   const lineImageProject: Project = {
@@ -20,7 +34,7 @@ export function bootstrap() {
       endDate: "Nov 23",
     },
     description: {
-      short: "Turn a image into a line painting using Opencv",
+      short: "Turn an image into a line painting using Opencv",
     },
     images: {
       main: line,
@@ -121,6 +135,27 @@ export function bootstrap() {
     smartShelfProject,
   ];
   projectsStore.addProjects(projects);
+
+  techStore.add([
+    { name: "js", url: js, level: Level.Proficient },
+    { name: "ts", url: ts, level: Level.Proficient },
+    { name: "node", url: node, level: Level.Proficient },
+    { name: "python", url: python, level: Level.Proficient },
+    { name: "Webpack", url: webpack, level: Level.Proficient },
+    { name: "Svelte", url: svelte, level: Level.Comfortable },
+    { name: "SolidJS", url: solidjs, level: Level.Comfortable },
+    { name: "React", url: react, level: Level.Comfortable },
+    { name: "Jenkins", url: jenkins, level: Level.Comfortable },
+    { name: "Kotlin", url: kotlin, level: Level.Comfortable },
+    { name: "express", url: express, level: Level.HaveUsed },
+    { name: "opencv", url: opencv, level: Level.HaveUsed },
+    { name: "d3", url: d3, level: Level.HaveUsed },
+    { name: "c#", url: csharp, level: Level.HaveUsed },
+    { name: "Unity", url: unity, level: Level.HaveUsed },
+    { name: "Unreal", url: unreal, level: Level.HaveUsed },
+    { name: "Arduino", url: arduino, level: Level.HaveUsed },
+    { name: "Angular", url: angular, level: Level.HaveUsed },
+  ]);
 
   //step2
   calcMousePos();
